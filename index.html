@@ -1,56 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TempleYatra.in - All India Temples</title>
-<!-- YOUR ADSENSE CODE - ADDED BY ME -->
+<title>TempleYatra.in - All India Temples Darshan</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-621946370744834" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 body{font-family:Arial;margin:0;background:#fff8e7}
-header{background:#ff6b00;color:white;padding:15px;text-align:center;position:sticky;top:0;z-index:999}
-header img{width:70px;height:70px;border-radius:50%;background:white;padding:5px}
-header h1{margin:5px 0 0;font-size:26px}
-.search{padding:15px;text-align:center}
-.search input{padding:14px;width:92%;border-radius:25px;border:1px solid #ccc;font-size:16px}
-.filters{text-align:center;padding:0 10px}
-.filters button{padding:8px 15px;margin:3px;border:none;border-radius:20px;background:#ffe0b2;cursor:pointer}
+header{background:linear-gradient(135deg,#ff6b00,#d32f2f);color:white;padding:15px;text-align:center}
+.search{padding:15px;text-align:center;background:#fff8e7;position:sticky;top:0;z-index:99}
+.search input{padding:14px;width:94%;max-width:600px;border-radius:25px;border:2px solid #ffcc80;font-size:16px}
+.filters{text-align:center;padding:10px}
+.filters button{padding:9px 16px;margin:4px;border:none;border-radius:20px;background:#ffe0b2;cursor:pointer;font-weight:bold}
 .filters button.active{background:#ff6b00;color:white}
-#map{height:300px;margin:10px;border-radius:15px}
+.adbox{text-align:center;background:#fff;padding:12px;margin:12px;border-radius:12px;border:1px dashed #ffb74d}
 .grid{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;padding:10px}
-.card{background:white;width:340px;border-radius:15px;overflow:hidden;box-shadow:0 4px 10px #ddd}
-.card img{width:100%;height:180px;object-fit:cover}
-.card div{padding:15px}
-.btn{background:#ff6b00;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;display:inline-block;margin:3px}
-.btn2{background:#25D366;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;display:inline-block}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);overflow:auto;z-index:1000}
-.modalBox{background:white;margin:5% auto;padding:20px;width:92%;max-width:600px;border-radius:15px}
-footer{background:#333;color:white;padding:20px;text-align:center;margin-top:20px}
-footer a{color:#ffcc80;text-decoration:none;margin:0 10px}
+.card{background:white;width:350px;border-radius:15px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.card img{width:100%;height:190px;object-fit:cover}
+.card div{padding:14px}
+.btn{background:#ff6b00;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;display:inline-block;margin:3px;font-weight:bold;border:none;cursor:pointer}
+.btn2{background:#25D366;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;display:inline-block;margin:3px}
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);overflow:auto;z-index:1000}
+.modalBox{background:white;margin:3% auto;padding:20px;width:94%;max-width:650px;border-radius:15px;position:relative}
+footer{background:#222;color:white;padding:20px;text-align:center;margin-top:20px}
 </style>
 </head>
 <body>
-<header>
-<img src="https://cdn-icons-png.flaticon.com/512/2636/2636396.png">
-<h1>🛕 TempleYatra.in</h1>
-<p>100 Temples | Route | Bus, Train, Flight, Cab | Hotels | Hospitals</p>
-<p style="font-size:13px">📱 Help? WhatsApp: 8247679346</p>
-</header>
-
-<!-- TOP AD - YOUR ADSENSE + BOOKING -->
-<div style="text-align:center; background:#fff; padding:10px; margin:10px; border-radius:10px; border:1px dashed #ccc">
-<p style="font-size:11px; color:grey; margin:0">Advertisement</p>
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-621946370744834" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<a href="https://www.booking.com/index.html?aid=4749214" target="_blank" style="display:block; background:#ff6b00; color:white; padding:12px; border-radius:10px; text-decoration:none; font-weight:bold; margin-top:8px">
-🏨 Book Hotels Near Temple - Upto 30% OFF on Booking.com - Click Here
-</a>
+<header><h1>🛕 TempleYatra.in</h1><p>100 Temples | Route | Bus, Train, Flight, Cab | Hotels | Hospitals</p><p>📱 Help? WhatsApp: 8247679346 | UPI: 8247679346@kotakbank</p></header>
+<div class="adbox">
+<a href="https://www.booking.com/index.html?aid=4749214" target="_blank" style="display:block;background:#003580;color:white;padding:14px;border-radius:10px;text-decoration:none;font-weight:bold;font-size:16px">🏨 Book Hotels Near Temple - Upto 30% OFF on Booking.com</a>
 </div>
-
-<div class="search">
-<input id="searchBox" placeholder="🔍 Search Temple, City, District, State - Eg: Tirupati, Yadagirigutta..." onkeyup="render()">
-</div>
+<div class="search"><input id="searchBox" placeholder="🔍 Search Temple, City, District, State - Eg: Tirupati, Yadagirigutta..." onkeyup="render()"></div>
 <div class="filters">
 <button onclick="filterState('All',this)" class="active">All India</button>
 <button onclick="filterState('Telangana',this)">Telangana</button>
@@ -60,34 +40,11 @@ footer a{color:#ffcc80;text-decoration:none;margin:0 10px}
 <button onclick="filterState('Kerala',this)">Kerala</button>
 <button onclick="filterState('Maharashtra',this)">Maharashtra</button>
 </div>
-<div id="map"></div>
+<div style="text-align:center;color:#ff6b00;font-weight:bold" id="count">Loading...</div>
 <div class="grid" id="grid"></div>
-
-<!-- DONATE - YOUR UPI -->
-<div style="background:#fff3e0; margin:15px; padding:20px; border-radius:15px; text-align:center; border:2px solid #ff6b00">
-<h3>🙏 Support TempleYatra.in</h3>
-<p>Help us add more temples, photos & routes for devotees. Any amount helps!</p>
-<a href="upi://pay?pa=8247679346@kotakbank&pn=TempleYatra&cu=INR" style="background:#25D366; color:white; padding:14px 30px; border-radius:25px; text-decoration:none; font-size:18px; font-weight:bold; display:inline-block">💚 Donate via GPay / PhonePe / Paytm</a>
-<p style="font-size:13px; margin-top:10px">UPI ID: <b>8247679346@kotakbank</b><br>Or Pay to 8247679346</p>
-</div>
-
-<!-- LOCAL BUSINESS AD - YOUR WHATSAPP -->
-<div style="background:#e3f2fd; margin:15px; padding:15px; border-radius:15px; text-align:center">
-<h3>📢 Advertise Your Business Here</h3>
-<p>Hotel, Cab, Restaurant near Temple? Get 10,000 devotees to see you!</p>
-<p><b>Only Rs. 500/month</b> - Your Name + Phone + Photo on Top</p>
-<a href="https://wa.me/918247679346?text=Hi%20Pradeep,%20I%20want%20to%20advertise%20my%20Hotel/Shop%20on%20TempleYatra.in" target="_blank" style="background:#25D366; color:white; padding:12px 25px; border-radius:25px; text-decoration:none; display:inline-block">📱 WhatsApp Us to Advertise - 8247679346</a>
-</div>
-
-<footer>
-<p>© 2026 TempleYatra.in - Made by Pradeep, Ghatkesar, Telangana</p>
-<a href="#">About Us</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact Us</a>
-<p style="font-size:12px; color:#aaa">WhatsApp: 8247679346 | UPI: 8247679346@kotakbank</p>
-</footer>
-
+<div style="background:#fff3e0;margin:15px;padding:20px;border-radius:15px;text-align:center;border:2px solid #ff6b00"><h3>🙏 Support TempleYatra.in</h3><a href="upi://pay?pa=8247679346@kotakbank&pn=TempleYatra&cu=INR" style="background:#25D366;color:white;padding:14px 30px;border-radius:25px;text-decoration:none;font-size:18px;font-weight:bold;display:inline-block">💚 Donate via GPay / PhonePe - 8247679346@kotakbank</a></div>
+<footer><p>© 2026 TempleYatra.in - Made by Pradeep, Ghatkesar</p></footer>
 <div id="modal" class="modal"><div class="modalBox" id="modalBox"></div></div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const temples = [
 {id:1,name:"Sri Venkateswara Temple, Tirupati",city:"Tirupati",district:"Tirupati",state:"Andhra Pradesh",lat:13.683,lon:79.347,timing:"3 AM - 9 PM",rail:"Tirupati - 22km",airport:"Tirupati - 40km",famous:"Balaji, Laddu",img:"https://images.unsplash.com/photo-1548013146-72479768bada?w=800"},
@@ -104,69 +61,21 @@ const temples = [
 {id:12,name:"Vaishno Devi Katra",city:"Katra",district:"Reasi",state:"Jammu & Kashmir",lat:32.99,lon:74.93,timing:"24 Hours",rail:"Katra - 2km",airport:"Jammu - 50km",famous:"13km Trek",img:"https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=800"},
 {id:13,name:"Meenakshi Amman Madurai",city:"Madurai",district:"Madurai",state:"Tamil Nadu",lat:9.91,lon:78.11,timing:"5 AM - 9:30 PM",rail:"Madurai - 2km",airport:"Madurai - 12km",famous:"Meenakshi",img:"https://images.unsplash.com/photo-1548013146-72479768bada?w=800"},
 {id:14,name:"Shirdi Sai Baba",city:"Shirdi",district:"Ahmednagar",state:"Maharashtra",lat:19.76,lon:74.47,timing:"4 AM - 11 PM",rail:"Kopargaon - 15km",airport:"Aurangabad - 120km",famous:"Sai Baba",img:"https://images.unsplash.com/photo-1548013146-72479768bada?w=800"},
-{id:15,name:"Jagannath Temple Puri",city:"Puri",district:"Puri",state:"Odisha",lat:19.80,lon:85.82,timing:"5 AM - 10 PM",rail:"Puri - 2km",airport:"Bhubaneswar - 60km",famous:"Rath Yatra",img:"https://images.unsplash.com/photo-1548013146-72479768bada?w=800"},
+{id:15,name:"Jagannath Temple Puri",city:"Puri",district:"Puri",state:"Odisha",lat:19.80,lon:85.82,timing:"5 AM - 10 PM",rail:"Puri - 2km",airport:"Bhubaneswar - 60km",famous:"Rath Yatra",img:"https://images.unsplash.com/photo-1548013146-72479768bada?w=800"}
 ];
 let currentState='All';
-let map = L.map('map').setView([17.5,78.9],6);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-let markers=[];
 function render(){
-  let q=document.getElementById('searchBox').value.toLowerCase();
-  let filtered = temples.filter(t => (currentState==='All' || t.state===currentState) && (t.name.toLowerCase().includes(q) || t.city.toLowerCase().includes(q) || t.state.toLowerCase().includes(q) || t.district.toLowerCase().includes(q)));
-  let html='';
-  markers.forEach(m=>map.removeLayer(m)); markers=[];
-  filtered.forEach(t=>{
-    html+=<div class="card"><img src="${t.img}"><div><h3>${t.name}</h3><p>📍 ${t.city}, ${t.district}, ${t.state}<br>⏰ ${t.timing}<br><b>Famous:</b> ${t.famous}</p><button class="btn" onclick="openTemple(${t.id})">View Route & Hotels →</button></div></div>;
-    let m=L.marker([t.lat,t.lon]).addTo(map).bindPopup(<b>${t.name}</b><br><button onclick="openTemple(${t.id})">View</button>);
-    markers.push(m);
-  });
-  document.getElementById('grid').innerHTML=html;
+ let q=document.getElementById('searchBox').value.toLowerCase();
+ let filtered = temples.filter(t => (currentState==='All' || t.state===currentState) && (t.name.toLowerCase().includes(q) || t.city.toLowerCase().includes(q) || t.state.toLowerCase().includes(q) || t.district.toLowerCase().includes(q)));
+ let html=''; filtered.forEach(t=>{html+=`<div class="card"><img src="${t.img}" onerror="this.src='https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=800'"><div><h3>${t.name}</h3><p>📍 ${t.city}, ${t.district}, ${t.state}<br>⏰ ${t.timing}<br><b>Famous:</b> ${t.famous}</p><button class="btn" onclick="openTemple(${t.id})">View Route & Hotels →</button></div></div>`;});
+ if(filtered.length==0){html='<p style="text-align:center">No temples found.</p>';}
+ document.getElementById('grid').innerHTML=html;
+ document.getElementById('count').innerText='Showing '+filtered.length+' Temples - '+currentState;
 }
-function filterState(s,btn){
-  currentState=s;
-  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  render();
-}
-function openTemple(id){
-  let t=temples.find(x=>x.id===id);
-  document.getElementById('modalBox').innerHTML=`
-  <button onclick="document.getElementById('modal').style.display='none'" style="float:right;padding:8px 15px;border:none;background:#ff6b00;color:white;border-radius:20px">✕ Close</button>
-  <h2>🛕 ${t.name}</h2>
-  <img src="${t.img}" style="width:100%;border-radius:15px">
-  <p>📍 ${t.city}, ${t.district}, ${t.state}<br>⏰ ${t.timing}<br>🚆 ${t.rail}<br>✈️ ${t.airport}<br><b>Famous:</b> ${t.famous}</p>
-  <h3>🗺️ How to Reach</h3>
-  <input id="fromCity" placeholder="Enter Your City - Eg: Ghatkesar" style="padding:12px;width:70%;border-radius:10px;border:1px solid #ccc">
-  <button onclick="showRoute()" style="padding:12px;background:#ff6b00;color:white;border:none;border-radius:10px">Get Route</button>
-  <div id="routeBox"></div>
-  <a class="btn2" href="https://www.google.com/maps/dir/?api=1&destination=${t.lat},${t.lon}" target="_blank">📍 Open Live Google Map Directions</a>
-  <h3>🏨 Hotel Booking - Best Price</h3>
-  <a class="btn" href="https://www.booking.com/searchresults.html?ss=${t.city}&aid=4749214" target="_blank">Booking.com - 30% OFF</a>
-  <a class="btn" href="https://www.makemytrip.com/hotels/hotel-listing/?city=${t.city}" target="_blank">MakeMyTrip</a>
-  <a class="btn" href="https://www.agoda.com/search?city=${t.city}" target="_blank">Agoda</a>
-  <p style="font-size:11px; color:grey">* Book via these links - you get best price, TempleYatra gets small commission. Thank you 🙏</p>
-  <h3>🏥 Nearby</h3>
-  <p>🏨 Hotel - 1km | 🏥 Hospital - 2.5km (108) | 🍛 Tiffin Center - 0.4km<br>☕ Tea Shop - 0.2km | ⛽ Fuel - 1.2km | 🏦 ATM - 0.3km</p>
-  <h3>🚕 Book Travel</h3>
-  <a class="btn" href="https://www.redbus.in/" target="_blank">🚌 Book Bus</a>
-  <a class="btn" href="https://www.irctc.co.in/" target="_blank">🚆 Book Train</a>
-  <a class="btn" href="https://www.makemytrip.com/flights/" target="_blank">✈️ Book Flight</a>
-  <h3>💚 Support Us</h3>
-  <a href="upi://pay?pa=8247679346@kotakbank&pn=TempleYatra&cu=INR" style="background:#25D366; color:white; padding:12px 20px; border-radius:20px; text-decoration:none; display:inline-block">Donate via UPI - 8247679346@kotakbank</a>
-  <br><br>
-  <a href="https://wa.me/918247679346?text=Hi, I want to book a Cab/Hotel near ${t.name}" target="_blank" style="background:#25D366; color:white; padding:12px 20px; border-radius:20px; text-decoration:none; display:inline-block">📱 WhatsApp Pradeep for Cab/Hotel - 8247679346</a>
-  `;
-  document.getElementById('modal').style.display='block';
-}
-function showRoute(){
-  let from=document.getElementById('fromCity').value || 'Ghatkesar';
-  document.getElementById('routeBox').innerHTML=`
-  <div style="background:#e8f5e9;padding:12px;margin:8px 0;border-radius:10px"><b>🚗 Car / Cab</b> - 4 hrs 30 min - Rs. 2500<br>${from} → Temple via NH-65</div>
-  <div style="background:#e3f2fd;padding:12px;margin:8px 0;border-radius:10px"><b>🚌 Bus</b> - 5 hrs 30 min - Rs. 450<br>TSRTC / RedBus from ${from} Bus Stand</div>
-  <div style="background:#fff3e0;padding:12px;margin:8px 0;border-radius:10px"><b>🚆 Train</b> - 3 hrs 45 min - Rs. 180<br>Check IRCTC</div>
-  <div style="background:#fce4ec;padding:12px;margin:8px 0;border-radius:10px"><b>✈️ Flight</b> - 1 hr 10 min - Rs. 3200<br>Nearest Airport + Cab</div>`;
-}
-render();
+function filterState(s,btn){currentState=s;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');render();}
+function openTemple(id){let t=temples.find(x=>x.id===id);document.getElementById('modalBox').innerHTML=`<button onclick="document.getElementById('modal').style.display='none'" style="position:absolute;right:15px;top:15px;padding:8px 15px;border:none;background:#ff6b00;color:white;border-radius:20px">✕ Close</button><h2>🛕 ${t.name}</h2><img src="${t.img}" style="width:100%;border-radius:15px"><p>📍 ${t.city}, ${t.district}, ${t.state}<br>⏰ ${t.timing}<br>🚆 ${t.rail}<br>✈️ ${t.airport}<br><b>Famous:</b> ${t.famous}</p><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=${t.lat},${t.lon}" target="_blank" style="background:#25D366">📍 Google Maps Directions</a><br><br><a class="btn" href="https://www.booking.com/searchresults.html?ss=${t.city}&aid=4749214" target="_blank" style="background:#003580">🏨 Book Hotel - Booking.com</a><br><br><a href="https://wa.me/918247679346?text=Hi, I want Cab/Hotel near ${t.name}" target="_blank" style="background:#25D366;color:white;padding:12px 20px;border-radius:20px;text-decoration:none;display:inline-block">📱 WhatsApp Pradeep</a>`;document.getElementById('modal').style.display='block';}
+document.addEventListener('DOMContentLoaded', render);
+setTimeout(render,600);
 </script>
 </body>
 </html>
