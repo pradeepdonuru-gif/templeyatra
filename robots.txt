@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://templeyatra.netlify.app/sitemap.xml
+
+User-agent: Mediapartners-Google
+Allow: /
