@@ -364,45 +364,18 @@ document.addEventListener('DOMContentLoaded',render);
 setTimeout(render,400);
 </script>
 <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
-<script>
-// Merge all history - FINAL FIX
-try {
-  // Merge temple_part files
-  if(typeof templePart1 !== 'undefined' && templePart1.length){
-    let map = {};
-    [...templePart1, ...templePart2, ...templePart3].forEach(p=>{
-      if(p.id) map[p.id]=p;
-      if(p.name) map[p.name.toLowerCase()]=p;
-    });
-    temples.forEach(t=>{
-      let h = map[t.id] || map[t.name.toLowerCase()];
-      if(h){
-        if(h.history) t.history = h.history;
-        if(h.tradition) t.tradition = h.tradition;
-        if(h.timings) t.timings = h.timings;
-      }
-    });
-  }
-  // Merge full_history.js
-  if(typeof templeHistoryFull !== 'undefined'){
-    temples.forEach(t=>{
-      let fh = templeHistoryFull[t.id];
-      if(fh){
-        t.history = fh.history;
-        t.tradition = fh.tradition;
-      }
-    });
-  }
-  console.log("✅ Merged, temples:", temples.length);
-  render();
-} catch(e){
-  console.log("Merge error", e);
-}
-</script>
 <script src="temple_part1.js"></script>
 <script src="temple_part2.js"></script>
 <script src="temple_part3.js"></script>
-<script src="full_history.js"></script>
-<script src="popup_override.js"></script>
+<script>
+// WORKING MERGE - NO ERROR
+var temples = [];
+try {
+  if(typeof templePart1 !== 'undefined') temples = temples.concat(templePart1);
+  if(typeof templePart2 !== 'undefined') temples = temples.concat(templePart2);
+  if(typeof templePart3 !== 'undefined') temples = temples.concat(templePart3);
+  console.log("Temples loaded:", temples.length);
+} catch(e){ console.log(e); }
+</script>
 </body>
 </html>                 
