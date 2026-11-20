@@ -42,6 +42,28 @@ footer{background:#222;color:white;padding:18px;text-align:center;margin-top:15p
 </head>
 <body>
 <header>
+<!-- DAILY FESTIVAL BANNER - Auto changes -->
+<div id="daily-utsav" style="background: linear-gradient(135deg, #ff6a00, #ee0979); color:white; padding:14px 16px; border-radius:12px; margin:12px; text-align:center; font-family: sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <div style="font-size:13px; opacity:0.9; letter-spacing:1px;">🔔 AAJ KA VISHESH</div>
+  <div id="utsav-text" style="font-size:17px; font-weight:700; margin-top:4px;">Loading...</div>
+  <div style="font-size:12px; margin-top:6px; opacity:0.9;">👉 Full details + Timings on TempleYatra</div>
+</div>
+<script>
+const utsavList = [
+  "Keesaragutta - Karthika Masam Special Puja",
+  "Yadagirigutta - Free Laddu Prasadam Today",
+  "Chilkur Balaji - 108 Pradakshina Day",
+  "Keesara Ramalingeshwara - Abhishekam Today",
+  "Wargal Saraswati - Vidya Pooja for Students",
+  "Edupayala Durga - Bonalu Preparations",
+  "Komuravelli Mallanna - Special Jathara"
+];
+const today = new Date().getDate();
+const utsav = utsavList[today % utsavList.length];
+const options = { weekday: 'long', day: 'numeric', month: 'short' };
+const dateStr = new Date().toLocaleDateString('en-IN', options);
+document.getElementById('utsav-text').innerHTML = "🛕 " + utsav + "<br><span style='font-size:13px; font-weight:400;'>" + dateStr + "</span>";
+</script>
 <h1>🛕 TempleYatra.in - 241 Temples All India</h1>
 <p>Search 241 Temples | Route | Bus, Train, Flight, Cab | Hotels | Hospitals</p>
 <p style="font-size:11px">WhatsApp: 8247679346 | UPI: 8247679346@kotakbank | Booking.com ID: 4749214</p>
