@@ -369,34 +369,41 @@ setTimeout(render,400);
 <script src="temple_part1.js"></script>
 <script src="temple_part2.js"></script>
 <script src="temple_part3.js"></script>
-<script>
-// Merge history into main temples + safe filter
-try{
-  let parts=[...templePart1, ...templePart2, ...templePart3];
-  let map={};
-  parts.forEach(p=>{ if(p.id) map[p.id]=p; if(p.name) map[p.name.toLowerCase()]=p; });
-  temples.forEach(t=>{
-    let h=map[t.id] || map[t.name.toLowerCase()];
-    if(h){ if(h.history) t.history=h.history; if(h.tradition) t.tradition=h.tradition; }
-  });
-  console.log("Merged", temples.length, "temples with history");
-}catch(e){ console.log("Merge error", e); }
-
-// Safe filter - fixes Showing 0/0
-function getFiltered(){
-  let q=(document.getElementById('searchBox')?.value||'').toLowerCase();
-  return temples.filter(t=>{
-    let stateOk = (currentState==='All' || t.state===currentState);
-    if(q==='') return stateOk;
-    return stateOk && (t.name.toLowerCase().includes(q) || (t.district||'').toLowerCase().includes(q));
-  });
-}
-setTimeout(render, 500);
-</script>
-<script src="temple_part1.js"></script>
-<script src="temple_part2.js"></script>
-<script src="temple_part3.js"></script>
 <script src="full_history.js"></script>
-</body>
+<script>
+// Merge all history - FINAL FIX
+try {
+  // Merge temple_part files
+  if(typeof templePart1 !== 'undefined' && templePart1.length){
+    let map = {};
+    [...templePart1, ...templePart2, ...templePart3].forEach(p=>{
+      if(p.id) map[p.id]=p;
+      if(p.name) map[p.name.toLowerCase()]=p;
+    });
+    temples.forEach(t=>{
+      let h = map[t.id] || map[t.name.toLowerCase()];
+      if(h){
+        if(h.history) t.history = h.history;
+        if(h.tradition) t.tradition = h.tradition;
+        if(h.timings) t.timings = h.timings;
+      }
+    });
+  }
+  // Merge full_history.js
+  if(typeof templeHistoryFull !== 'undefined'){
+    temples.forEach(t=>{
+      let fh = templeHistoryFull[t.id];
+      if(fh){
+        t.history = fh.history;
+        t.tradition = fh.tradition;
+      }
+    });
+  }
+  console.log("✅ Merged, temples:", temples.length);
+  render();
+} catch(e){
+  console.log("Merge error", e);
+}
+</script>
 </body>
 </html>                 
