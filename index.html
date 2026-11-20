@@ -30,7 +30,7 @@ header{background:linear-gradient(135deg,#ff6b00,#d32f2f);color:white;padding:15
 .filters button.active{background:#ff6b00;color:white}
 .adbox{text-align:center;background:#fff;padding:12px;margin:12px;border-radius:12px;border:1px dashed #ffb74d}
 .grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:10px}
-.card{background:white;width:330px;border-radius:14px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.15)}}
+.card{background:white;width:330px;border-radius:14px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.15)}
 .card img{width:100%;height:170px;object-fit:cover}
 .card div{padding:12px}
 .btn{background:#ff6b00;color:white;padding:9px 14px;border-radius:20px;text-decoration:none;display:inline-block;margin:2px;font-weight:bold;border:none;cursor:pointer;font-size:13px}
@@ -337,7 +337,6 @@ const temples = [{id:1,name:"Yadagirigutta Lakshmi Narasimha Swamy",city:"Yadagi
 ];
 let currentState='All';
 let visibleCount=24;
-const temples = [...templePart1, ...templePart2, ...templePart3];
 function getFiltered(){let q=document.getElementById('searchBox').value.toLowerCase();return temples.filter(t=> {let stateOk = (currentState==='All' || (t.state && t.state===currentState));let nameOk = t.name && t.name.toLowerCase().includes(q);let distOk = t.district && t.district.toLowerCase().includes(q);return stateOk && (q==='' || nameOk || distOk); })}
 function render(){let filtered=getFiltered();let show=filtered.slice(0,visibleCount);let html="";show.forEach(t=>{let img = t.img || 'https://images.unsplash.com/photo-1583243536445-44447fe0a17d';let dist = t.district || t.city || '';let state = t.state || '';html+=`<div class="card" onclick="openTemple(${t.id})"><img src="${img}" loading="lazy"><h3>${t.name}</h3><p>${dist}, ${state}</p><small>${t.timing || ''}</small></div>`;});document.getElementById('grid').innerHTML=html;document.getElementById('count').innerText=`Showing ${show.length} / ${filtered.length}`;}
 function resetRender(){visibleCount=24;render();}
@@ -362,22 +361,7 @@ function openTemple(id){
 window.onclick=function(e){if(e.target==document.getElementById('modal')){document.getElementById('modal').style.display='none';}}
 document.addEventListener('DOMContentLoaded',render);
 setTimeout(render,400);
-</script>
 <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
-<script src="temple_part1.js"></script>
-<script src="temple_part2.js"></script>
-<script src="temple_part3.js"></script>
-<script>
-// WORKING MERGE - NO ERROR
-var temples = [];
-try {
-  if(typeof templePart1 !== 'undefined') temples = temples.concat(templePart1);
-  if(typeof templePart2 !== 'undefined') temples = temples.concat(templePart2);
-  if(typeof templePart3 !== 'undefined') temples = temples.concat(templePart3);
-console.log("Temples loaded:", temples.length);
-render();
-setTimeout(render,600);
-} catch...
 </script>
 </body>
 </html>                 
