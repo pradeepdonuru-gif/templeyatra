@@ -370,9 +370,28 @@ setTimeout(render,400);
 <script src="temple_part2.js"></script>
 <script src="temple_part3.js"></script>
 <script>
-  const allTemples = [...templePart1, ...templePart2, ...templePart3];
-  console.log("Total Temples Loaded:", allTemples.length);
-  // This makes Google + AdSense see 241 temples content!
+// Merge history into main temples + safe filter
+try{
+  let parts=[...templePart1, ...templePart2, ...templePart3];
+  let map={};
+  parts.forEach(p=>{ if(p.id) map[p.id]=p; if(p.name) map[p.name.toLowerCase()]=p; });
+  temples.forEach(t=>{
+    let h=map[t.id] || map[t.name.toLowerCase()];
+    if(h){ if(h.history) t.history=h.history; if(h.tradition) t.tradition=h.tradition; }
+  });
+  console.log("Merged", temples.length, "temples with history");
+}catch(e){ console.log("Merge error", e); }
+
+// Safe filter - fixes Showing 0/0
+function getFiltered(){
+  let q=(document.getElementById('searchBox')?.value||'').toLowerCase();
+  return temples.filter(t=>{
+    let stateOk = (currentState==='All' || t.state===currentState);
+    if(q==='') return stateOk;
+    return stateOk && (t.name.toLowerCase().includes(q) || (t.district||'').toLowerCase().includes(q));
+  });
+}
+setTimeout(render, 500);
 </script>
 </body>
 </html>                 
