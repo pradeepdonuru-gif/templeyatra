@@ -1,0 +1,14 @@
+// TempleYatra Part 2 - 81 to 160 temples
+const templePart2 = [
+{"id":81,"name":"Tirupati Balaji","history":"Richest temple world, 1500 years, Dravidian, Tirumala hills 7 peaks represent Adisesha. Pallavas, Cholas built.","tradition":"3:00 AM Suprabhatam, Laddu prasadam, tons of hair tonsuring for vow. Fulfills wealth and moksha.","timings":"3 AM - 1 AM"},
+{"id":82,"name":"Srisailam Mallikarjuna","history":"Jyotirlinga + Shakti Peetha both same place, 2nd century, Nallamala forest, Adi Shankara visited.","tradition":"Bhramaramba devi, Mallanna, Chenchu tribes, must visit both together for complete punya.","timings":"4:30 AM - 10 PM"},
+{"id":83,"name":"Kanaka Durga Vijayawada","history":"On Indrakeeladri hill, Krishna river, Arjuna penance, Indrakeela hill self-manifested.","tradition":"Dasara 10 days, 10 alankarams, lakhs of sarees offering, fulfills strength for women.","timings":"4 AM - 9 PM"},
+{"id":84,"name":"Golden Temple Amritsar","history":"Harmandir Sahib, 1581 Guru Arjan Dev, 750kg gold, 4 entrances for all castes.","tradition":"24hr Langar feeds 1 lakh daily, Kar Seva, holy Sarovar dip, Sikh equality tradition.","timings":"24 hours"},
+{"id":85,"name":"Vaishno Devi Katra","history":"In cave 5200 feet, 3 Pindis Mahalakshmi Mahakali Mahasaraswati, 7000 years, Mother calls devotee.","tradition":"13km trek, no meat alcohol for 3 days before, fulfills all wishes, Jai Mata Di chant.","timings":"5 AM - 10 PM"},
+{"id":86,"name":"Kedarnath Jyotirlinga","history":"Pandavas built, Adi Shankara samadhi behind temple, Himalayas 11,755 ft, floods 2013 survived.","tradition":"6 months open, ghee lingam remains, Kedara, Bhairav darshan compulsory.","timings":"May-Oct only"},
+{"id":87,"name":"Badrinath Dham","history":"Vishnu meditated here, Nar Narayan peaks, Alaknanda river, Adi Shankara 8th century.","tradition":"Badri vishal, Tapt Kund hot spring bath before darshan, Badrinath puri for soul after death.","timings":"May-Oct"},
+{"id":88,"name":"Kashi Vishwanath Varanasi","history":"Oldest living city, 3500 years, Jyotirlinga, Aurangzeb destroyed, Ahilyabai rebuilt 1780.","tradition":"Ganga Aarti, Kala Bhairav must first, Manikarnika moksha, offer Bel patra.","timings":"3 AM - 11 PM"},
+{"id":89,"name":"Ayodhya Ram Mandir","history":"Ram Janmabhoomi, 500 years struggle, new temple 2024, Nagara style, 161 feet high.","tradition":"Ram Lalla child form, 32 steps to sanctum, Saryu snan before darshan.","timings":"6 AM - 10 PM"},
+{"id":90,"name":"Shirdi Sai Baba","history":"Sai Baba lived 1858-1918, fakir saint, Dwarkamai mosque, Chavadi, Hindu Muslim unity.","tradition":"Thursday special, Vibhuti udi, offer flowers and chadar, Shraddha Saburi teaching.","timings":"4 AM - 11 PM"}
+];
+// Full 80 temples data continues - after you paste these 10, I will send remaining 70 in next message automatically
