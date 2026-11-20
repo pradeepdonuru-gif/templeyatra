@@ -374,7 +374,9 @@ try {
   if(typeof templePart1 !== 'undefined') temples = temples.concat(templePart1);
   if(typeof templePart2 !== 'undefined') temples = temples.concat(templePart2);
   if(typeof templePart3 !== 'undefined') temples = temples.concat(templePart3);
-  console.log("Temples loaded:", temples.length);
+console.log("Temples loaded:", temples.length);
+render();
+setTimeout(render,600);
 } catch(e){ console.log(e); }
 </script>
 </body>
