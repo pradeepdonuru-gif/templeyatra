@@ -351,10 +351,8 @@ function openTemple(id){
     <img src="${t.img}" style="width:100%;height:200px;object-fit:cover;border-radius:8px">
     <div style="text-align:left;margin-top:10px">
       <h3>📜 History</h3>
-      <p>${t.history || 'Ancient temple with rich heritage.'}</p>
-      <h3>🙏 Tradition & Pooja</h3>
-      <p>${t.tradition || 'Daily pooja and special festivals.'}</p>
-      <h3>🚆 How to Reach</h3>
+<p style="background:#fff8e1; padding:10px; border-radius:6px; border-left:4px solid orange; font-size:14px; line-height:1.6;">${t.history || (typeof templeHistoryFull!=='undefined' && templeHistoryFull[t.id] ? templeHistoryFull[t.id].history : templeHistoryFull && templeHistoryFull[1] ? templeHistoryFull[1].history : 'Keesaragutta - 3000 years old Swayambhu Linga, Kakatiya kings built, mentioned in Skanda Purana, 101 Lingas on hill, Ramalingeswara Swamy installed by Lord Rama himself after Brahmahatya dosha.')}</p>      <h3>🙏 Tradition & Pooja</h3>
+<p style="background:#e8f5e9; padding:10px; border-radius:6px; border-left:4px solid green; font-size:14px; line-height:1.6; margin-top:8px;">${t.tradition || (typeof templeHistoryFull!=='undefined' && templeHistoryFull[t.id] ? templeHistoryFull[t.id].tradition : 'Daily 4 AM Abhishekam with milk & bilva leaves, Kumkum Archana, 3 Pradakshinas, Coconut breaking, Monday Karthika Masam special, Annadanam. Devotees believe education & marriage wishes fulfilled here.')}</p>      <h3>🚆 How to Reach</h3>
       <p>🚂 ${t.rail} | ✈️ ${t.airport}</p>
       <a href="https://www.booking.com/searchresults.html?aid=4749214&label=temple-${t.id}" target="_blank" style="background:#ff6600;color:white;padding:10px 20px;display:inline-block;border-radius:5px;text-decoration:none;margin-top:10px">🏨 Book Hotel Near Temple - 30% OFF</a>
     </div>
