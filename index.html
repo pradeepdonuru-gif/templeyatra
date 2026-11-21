@@ -338,7 +338,7 @@ const temples = [{id:1,name:"Yadagirigutta Lakshmi Narasimha Swamy",city:"Yadagi
 {id:241,name:"Hemkund Sahib",city:"Hemkund",district:"Chamoli",state:"Uttarakhand",lat:30.32,lon:78.69,timing:"4 AM - 9 PM",rail:"Hemkund Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600"}
 ];
 // FINAL - REAL TEMPLE IMAGES - UNIQUE FOR EACH
-temples.forEach(t => { t.img = `https://loremflickr.com/600/400/temple,hindu,india?lock=${t.id}`; });
+temples.forEach(t => { t.img = `https://source.unsplash.com/600x400/?hindu-temple,india&sig=${t.id}`; });
 // FINAL FIX - 241 TEMPLES DYNAMIC SEO
 window.addEventListener('load', function(){
   var p=new URLSearchParams(location.search);
