@@ -1,100 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="RT9l2eoccD1kMQM5Ad-uJStDQUdoz1zDVmlB_jUlMN0" />
-<meta name="google-site-verification" content="GrSWTfAk4p5bacJxBaIj4DD_z8NzYmLlbw6kAdbv1dg" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6331946370744834"crossorigin="anonymous"></script>
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N7L55XJT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KLR1XZ24YS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KLR1XZ24YS');
-</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TempleYatra.in - 241 Temples All India</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6331946370744834"crossorigin="anonymous"></script>
-<style>
-body{font-family:Arial;margin:0;background:#fff8e7}
-header{background:linear-gradient(135deg,#ff6b00,#d32f2f);color:white;padding:15px;text-align:center}
-.search{padding:15px;text-align:center;background:#fff8e7;position:sticky;top:0;z-index:50}
-.search input{padding:14px;width:94%;max-width:650px;border-radius:25px;border:2px solid #ffcc80;font-size:16px}
-.filters{text-align:center;padding:10px}
-.filters button{padding:8px 13px;margin:3px;border:none;border-radius:20px;background:#ffe0b2;cursor:pointer;font-weight:bold;font-size:13px}
-.filters button.active{background:#ff6b00;color:white}
-.adbox{text-align:center;background:#fff;padding:12px;margin:12px;border-radius:12px;border:1px dashed #ffb74d}
-.grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:10px}
-.card{background:white;width:330px;border-radius:14px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.15)}}
-.card img{width:100%;height:170px;object-fit:cover}
-.card div{padding:12px}
-.btn{background:#ff6b00;color:white;padding:9px 14px;border-radius:20px;text-decoration:none;display:inline-block;margin:2px;font-weight:bold;border:none;cursor:pointer;font-size:13px}
-.btn2{background:#25D366;color:white;padding:9px 14px;border-radius:20px;text-decoration:none;display:inline-block;margin:2px;font-size:13px}
-.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);overflow:auto;z-index:1000}
-.modalBox{background:white;margin:2% auto;padding:18px;width:95%;max-width:700px;border-radius:14px;position:relative}
-footer{background:#222;color:white;padding:18px;text-align:center;margin-top:15px}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TempleYatra - Indian Temples Directory, History, Traditions, Timings & Routes</title>
+  <meta name="description" content="Explore famous Hindu temples across India with history, traditions, darshan timings, nearest railway stations, airports, Google Maps routes, and hotel bookings." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background: #fdf8f4; color: #2b2118; }
+    header { background: linear-gradient(135deg, #d94e1f, #ff7b00); color: #fff; padding: 24px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+    header h1 { margin: 0 0 6px; font-size: 26px; }
+    header p { margin: 0; font-size: 14px; opacity: 0.95; }
+    .controls { max-width: 1200px; margin: 18px auto 10px; padding: 0 16px; }
+    #searchBox { width: 100%; padding: 12px 16px; font-size: 15px; border: 1px solid #e0cbb8; border-radius: 25px; outline: none; background: #fff; }
+    #searchBox:focus { border-color: #ff6b00; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .filters button { padding: 7px 14px; border: 1px solid #e0cbb8; background: #fff; color: #4a3525; border-radius: 20px; cursor: pointer; font-size: 13px; }
+    .filters button:hover, .filters button.active { background: #ff6b00; color: #fff; border-color: #ff6b00; }
+    .status-bar { max-width: 1200px; margin: 8px auto; padding: 0 16px; font-size: 13px; color: #6b5344; display: flex; justify-content: space-between; align-items: center; }
+    .grid { max-width: 1200px; margin: 12px auto 24px; padding: 0 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px; }
+    .card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid #efe0d3; box-shadow: 0 3px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+    .card img { width: 100%; height: 180px; object-fit: cover; background: #f3e5d8; }
+    .card-body { padding: 12px 14px 16px; display: flex; flex-direction: column; flex: 1; }
+    .card-body h4 { margin: 0 0 4px; font-size: 16px; color: #1f160f; }
+    .card-body p { margin: 3px 0; color: #5c4738; }
+    .btn { margin-top: auto; padding: 9px 14px; background: #ff6b00; color: #fff; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; display: inline-block; }
+    .btn:hover { background: #e05a00; }
+    .btn2 { padding: 10px 18px; background: #1a73e8; color: #fff; border-radius: 20px; text-decoration: none; display: inline-block; font-size: 14px; font-weight: 600; text-align: center; }
+    #pagination { text-align: center; margin: 20px 0 36px; }
+    #pagination button { padding: 10px 24px; background: #2b2118; color: #fff; border: none; border-radius: 25px; font-size: 14px; cursor: pointer; }
+    #modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 1000; padding: 16px; overflow-y: auto; }
+    #modalBox { background: #fff; max-width: 600px; margin: 30px auto; padding: 22px; border-radius: 16px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    #modalBox h3 { margin-top: 0; padding-right: 36px; color: #b8420c; }
+    .info-section { background: #fdf6ef; border-left: 4px solid #ff6b00; padding: 10px 14px; border-radius: 8px; margin: 12px 0; }
+    .info-section h4 { margin: 0 0 6px; font-size: 14px; color: #9c3608; }
+    .info-section p { margin: 0; font-size: 13.5px; line-height: 1.6; color: #3d2e24; }
+    footer { text-align: center; padding: 20px 16px; border-top: 1px solid #ead8c8; font-size: 13px; color: #6b5344; }
+    footer a { color: #d94e1f; text-decoration: none; margin: 0 6px; }
+  </style>
 </head>
 <body>
+
 <header>
-<!-- DAILY FESTIVAL BANNER - Auto changes -->
-<div id="daily-utsav" style="background: linear-gradient(135deg, #ff6a00, #ee0979); color:white; padding:14px 16px; border-radius:12px; margin:12px; text-align:center; font-family: sans-serif; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-  <div style="font-size:13px; opacity:0.9; letter-spacing:1px;">🔔 AAJ KA VISHESH</div>
-  <div id="utsav-text" style="font-size:17px; font-weight:700; margin-top:4px;">Loading...</div>
-  <div style="font-size:12px; margin-top:6px; opacity:0.9;">👉 Full details + Timings on TempleYatra</div>
-</div>
-<script>
-const utsavList = [
-  "Keesaragutta - Karthika Masam Special Puja",
-  "Yadagirigutta - Free Laddu Prasadam Today",
-  "Chilkur Balaji - 108 Pradakshina Day",
-  "Keesara Ramalingeshwara - Abhishekam Today",
-  "Wargal Saraswati - Vidya Pooja for Students",
-  "Edupayala Durga - Bonalu Preparations",
-  "Komuravelli Mallanna - Special Jathara"
-];
-const today = new Date().getDate();
-const utsav = utsavList[today % utsavList.length];
-const options = { weekday: 'long', day: 'numeric', month: 'short' };
-const dateStr = new Date().toLocaleDateString('en-IN', options);
-document.getElementById('utsav-text').innerHTML = "🛕 " + utsav + "<br><span style='font-size:13px; font-weight:400;'>" + dateStr + "</span>";
-</script>
-<h1>🛕 TempleYatra.in - 241 Temples All India</h1>
-<p>Search 241 Temples | Route | Bus, Train, Flight, Cab | Hotels | Hospitals</p>
-<p style="font-size:11px">WhatsApp: 8247679346 | UPI: 8247679346@kotakbank | Booking.com ID: 4749214</p>
+  <h1>🛕 TempleYatra</h1>
+  <p>Sacred Temples Across India — History, Traditions, Timings & Routes</p>
 </header>
-<div class="adbox">
-<a href="https://www.booking.com/index.html?aid=4749214" target="_blank" style="display:block;background:#003580;color:white;padding:13px;border-radius:10px;text-decoration:none;font-weight:bold">🏨 Book Hotels Near Temple - Booking.com - 30% OFF</a>
+
+<div class="controls">
+  <input type="text" id="searchBox" placeholder="Search by temple name, city, or state..." onkeyup="resetRender()" />
+  <div class="filters" id="stateFilters">
+    <button class="active" onclick="filterState('All', this)">All States</button>
+  </div>
 </div>
-<div class="search"><input id="searchBox" placeholder="🔍 Search 241 Temples - Tirupati, Yadagirigutta, Kedarnath, Shirdi..." oninput="resetRender()"></div>
-<div class="filters">
-<button onclick="filterState('All',this)" class="active">All 241</button>
-<button onclick="filterState('Telangana',this)">Telangana</button>
-<button onclick="filterState('Andhra Pradesh',this)">AP</button>
-<button onclick="filterState('Karnataka',this)">Karnataka</button>
-<button onclick="filterState('Tamil Nadu',this)">TN</button>
-<button onclick="filterState('Maharashtra',this)">Maharashtra</button>
-<button onclick="filterState('Kerala',this)">Kerala</button>
-<button onclick="filterState('Uttar Pradesh',this)">UP</button>
-<button onclick="filterState('Uttarakhand',this)">Uttarakhand</button>
-<button onclick="filterState('Gujarat',this)">Gujarat</button>
-<button onclick="filterState('Rajasthan',this)">Rajasthan</button>
-<button onclick="filterState('Delhi',this)">Delhi</button>
+
+<div class="status-bar">
+  <span id="count">Loading temples...</span>
+  <span>Showing <strong id="shown">0</strong> / <strong id="total">0</strong></span>
 </div>
-<div style="text-align:center;color:#c62828;font-weight:bold;padding:8px" id="count"></div>
+
 <div class="grid" id="grid"></div>
-<div style="text-align:center;padding:15px" id="pagination"><button onclick="loadMore()" style="padding:12px 28px;border:none;border-radius:25px;background:#ff6b00;color:white;font-weight:bold;cursor:pointer;font-size:15px">Load More Temples ↓ (20 More)</button><p style="font-size:12px">Showing <span id="shown">0</span> / <span id="total">0</span></p></div>
-<div style="display:none;background:#fff3e0;margin:15px;padding:18px;border-radius:14px;text-align:center;border:2px solid #ff6b00"><h3>🙏 Support 241 Temples Project</h3><a href="upi://pay?pa=8247679346@kotakbank&pn=TempleYatra&cu=INR" style="background:#25D366;color:white;padding:12px 28px;border-radius:25px;text-decoration:none;font-weight:bold;display:inline-block">💚 Donate - 8247679346@kotakbank</a></div>
-<footer><p>© 2026 TempleYatra.in - 241 Temples - Pradeep Ghatkesar</p></footer>
-<div id="modal" class="modal"><div class="modalBox" id="modalBox"></div></div>
+
+<div id="pagination">
+  <button onclick="loadMore()">Load More Temples</button>
+</div>
+
+<div id="modal">
+  <div id="modalBox"></div>
+</div>
+
+<footer>
+  <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+</footer>
+
 <script>
+// =========================================================================
+// REPLACE THIS SAMPLE ARRAY WITH YOUR FULL 241 TEMPLES ARRAY
+// Optional fields supported: history: "...", tradition: "..."
+// =========================================================================
 const temples = [{id:1,name:"Yadagirigutta Lakshmi Narasimha Swamy",city:"Yadagirigutta",district:"Bhongir",state:"Telangana",lat:17.34,lon:78.45,timing:"4 AM - 9 PM",rail:"Yadagirigutta Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan - Yadagirigutta",img:"https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600"},
 {id:2,name:"Keesaragutta Ramalingeswara Swamy",city:"Keesara",district:"Medchal",state:"Telangana",lat:17.47,lon:78.52,timing:"4 AM - 9 PM",rail:"Keesara Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan - Keesaragutta",img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600"},
 {id:3,name:"Vemulawada Raja Rajeshwara",city:"Vemulawada",district:"Rajanna Sircilla",state:"Telangana",lat:17.6,lon:78.59,timing:"4 AM - 9 PM",rail:"Vemulawada Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan - Vemulawada",img:"https://images.unsplash.com/photo-1579725357890-6a8e289f3e2c?w=600"},
@@ -337,34 +319,161 @@ const temples = [{id:1,name:"Yadagirigutta Lakshmi Narasimha Swamy",city:"Yadagi
 {id:240,name:"Tungnath Temple",city:"Tungnath",district:"Rudraprayag",state:"Uttarakhand",lat:30.19,lon:78.62,timing:"4 AM - 9 PM",rail:"Tungnath Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600"},
 {id:241,name:"Hemkund Sahib",city:"Hemkund",district:"Chamoli",state:"Uttarakhand",lat:30.32,lon:78.69,timing:"4 AM - 9 PM",rail:"Hemkund Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600"}
 ];
-// FINAL - REAL TEMPLE IMAGES - UNIQUE FOR EACH
-temples.forEach(t => { t.img = `https://picsum.photos/seed/templeyatra${t.id}/600/400`; });
-// FINAL FIX - 241 TEMPLES DYNAMIC SEO
-window.addEventListener('load', function(){
-  var p=new URLSearchParams(location.search);
-  var tid=p.get('temple')||p.get('Temple');
-  if(!tid) return;
-  var list=(typeof temples!=='undefined'?temples:[]);
-  if(list.length==0) return;
-  var t=null;
-  for(var i=0;i<list.length;i++){if(String(list[i].id)==String(tid)){t=list[i];break;}}
-  if(!t) return;
-  document.title=t.name+' Temple, '+(t.state||t.location||'India')+' - Timings & History | TempleYatra';
-  var m=document.querySelector('meta[name="description"]');
-  if(m) m.content=t.name+' Temple in '+(t.location||'')+'. Check timings, history, route.';
+const FALLBACK_IMG = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23f3e5d8' width='600' height='400'/%3E%3Ctext fill='%23b85d19' font-family='sans-serif' font-size='22' font-weight='bold' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E%F0%9F%9B%95 Temple Photo%3C/text%3E%3C/svg%3E";
+
+const imgCache = JSON.parse(localStorage.getItem('templeImgCache_v2') || '{}');
+const descCache = JSON.parse(localStorage.getItem('templeDescCache_v1') || '{}');
+
+// Fetch Wikipedia photo + history summary for any temple
+async function fetchWikiData(t, imgElement, historyElement) {
+  if (imgCache[t.id] && imgElement) imgElement.src = imgCache[t.id];
+  if (descCache[t.id] && historyElement) historyElement.innerText = descCache[t.id];
+  if (imgCache[t.id] && (t.history || descCache[t.id])) return;
+
+  const queries = [
+    `${t.name} ${t.city || ''}`.trim(),
+    `${t.name} Temple`.trim(),
+    t.name
+  ];
+
+  for (const q of queries) {
+    try {
+      const url = `https://wikipedia.org{encodeURIComponent(q)}&gsrlimit=1&prop=pageimages|extracts&exintro=1&explaintext=1&exsentences=4&piprop=thumbnail&pithumbsize=600&format=json&origin=*`;
+      const res = await fetch(url);
+      const data = await res.json();
+      const pages = data && data.query && data.query.pages;
+      if (pages) {
+        const pageList = Object.values(pages);
+        const page = pageList[0];
+        if (page) {
+          if (page.thumbnail && page.thumbnail.source && !imgCache[t.id]) {
+            t.img = page.thumbnail.source;
+            imgCache[t.id] = t.img;
+            localStorage.setItem('templeImgCache_v2', JSON.stringify(imgCache));
+            if (imgElement) imgElement.src = t.img;
+          }
+          if (page.extract && !descCache[t.id]) {
+            descCache[t.id] = page.extract;
+            localStorage.setItem('templeDescCache_v1', JSON.stringify(descCache));
+            if (historyElement && !t.history) historyElement.innerText = page.extract;
+          }
+          if (imgCache[t.id] || descCache[t.id]) return;
+        }
+      }
+    } catch (e) {}
+  }
+
+  if (historyElement && !t.history && !descCache[t.id]) {
+    historyElement.innerText = `${t.name} is a revered Hindu shrine located in ${t.city}, ${t.state}, attracting pilgrims throughout the year for daily poojas and seasonal festivals.`;
+  }
+}
+
+function getTraditionText(t) {
+  if (t.tradition && t.tradition.trim() !== '') return t.tradition;
+  return Daily worship at ${t.name} follows traditional Agama rituals including Suprabhatam, Abhishekam, Alankaram, and evening Deeparadhana. Devotees are advised to wear modest traditional attire, remove footwear before entering the temple premises, and check local festival calendars in ${t.state} for special seva timings.;
+}
+function handleImgError(imgEl, id) {
+imgEl.onerror = null;
+imgEl.src = FALLBACK_IMG;
+const t = temples.find(x => x.id === id);
+if (t) {
+delete imgCache[id];
+fetchWikiData(t, imgEl, null);
+}
+}
+function initStateButtons() {
+const container = document.getElementById('stateFilters');
+const states = [...new Set(temples.map(t => t.state).filter(Boolean))].sort();
+states.forEach(state => {
+const btn = document.createElement('button');
+btn.textContent = state;
+btn.onclick = function() { filterState(state, btn); };
+container.appendChild(btn);
 });
-let currentState='All';
-let visibleCount=24;
-function getFiltered(){let q=document.getElementById('searchBox').value.toLowerCase();return temples.filter(t=> (currentState==='All'||t.state===currentState) && (t.name.toLowerCase().includes(q)||t.city.toLowerCase().includes(q)||t.state.toLowerCase().includes(q)));}
-function render(){let filtered=getFiltered();let show=filtered.slice(0,visibleCount);let html='';show.forEach(t=>{html+=`<div class="card"><img src="${t.img}" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/temple${t.id}/600/400'" style="width:100%;height:180px;object-fit:cover"><div><h4 style="margin:4px 0">${t.name}</h4><p style="font-size:12px">${t.city}, ${t.state}</p><p style="font-size:11px">${t.timing} | 🚂 ${t.rail}</p><button class="btn" onClick="openTemple(${t.id})">Route & Hotels</button></div></div>`;});document.getElementById('grid').innerHTML=html||'<p>No temples found</p>';document.getElementById('count').innerText='Found '+filtered.length+' Temples - '+currentState+' | Showing '+show.length;document.getElementById('shown').innerText=show.length;document.getElementById('total').innerText=filtered.length;document.getElementById('pagination').style.display=show.length>=filtered.length?'none':'block';}
-function resetRender(){visibleCount=24;render();}
-function loadMore(){visibleCount+=24;render();}
-function filterState(s,btn){currentState=s;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');visibleCount=24;render();}
-function openTemple(id){let t=temples.find(x=>x.id===id);document.getElementById('modalBox').innerHTML=`<button onclick="document.getElementById('modal').style.display='none'" style="position:absolute;right:12px;top:12px;padding:7px 12px;border:none;background:#ff6b00;color:white;border-radius:20px;cursor:pointer">✕</button><h3>🛕 ${t.name}</h3><img src="${t.img}" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/temple${t.id}/600/400'" style="width:100%;border-radius:12px;max-height:300px;object-fit:cover"><p>📍 ${t.city}, ${t.district}, ${t.state}<br>⏰ ${t.timing}<br>🚆 ${t.rail}<br>✈️ ${t.airport}</p><a class="btn2" href="https://www.google.com/maps/dir/?api=1&destination=${t.lat},${t.lon}" target="_blank">📍 Google Map Directions</a><br><br><a class="btn" href="https://www.booking.com/searchresults.html?ss=${t.city}&aid=4749214" target="_blank" style="background:#003580">🏨 Booking.com Hotels</a><br><br><a href="https://wa.me/918247679346?text=Hi%20Pradeep%20Need%20Cab%20Hotel%20near%20${t.name}" target="_blank" style="background:#25D366;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;display:inline-block">📱 WhatsApp 8247679346</a>`;document.getElementById('modal').style.display='block';}
-window.onclick=function(e){if(e.target==document.getElementById('modal')){document.getElementById('modal').style.display='none';}}
-document.addEventListener('DOMContentLoaded',render);
-setTimeout(render,400);
+}
+window.addEventListener('load', function() {
+var p = new URLSearchParams(location.search);
+var tid = p.get('temple') || p.get('Temple');
+if (!tid) return;
+var t = temples.find(item => String(item.id) === String(tid));
+if (!t) return;
+document.title = t.name + ' Temple, ' + (t.state || t.location || 'India') + ' - History, Traditions & Timings | TempleYatra';
+var m = document.querySelector('meta[name="description"]');
+if (m) m.content = t.name + ' Temple in ' + (t.city || '') + '. Check history, traditions, darshan timings, and route.';
+});
+let currentState = 'All';
+let visibleCount = 24;
+function getFiltered() {
+let q = document.getElementById('searchBox').value.toLowerCase();
+return temples.filter(t =>
+(currentState === 'All' || t.state === currentState) &&
+((t.name && t.name.toLowerCase().includes(q)) || (t.city && t.city.toLowerCase().includes(q)) || (t.state && t.state.toLowerCase().includes(q)))
+);
+}
+function render() {
+let filtered = getFiltered();
+let show = filtered.slice(0, visibleCount);
+let html = '';
+show.forEach(t => {
+let cached = imgCache[t.id];
+let imgSrc = cached || (t.img && t.img.trim() !== '' ? t.img : FALLBACK_IMG);
+let shortSnippet = t.history || descCache[t.id] || Sacred shrine in ${t.city}, ${t.state}. Tap below for full history, traditions & timings.;
+html +=  <div class="card"> <img id="timg-${t.id}" src="${imgSrc}" alt="${t.name}" loading="lazy" referrerpolicy="no-referrer" onerror="handleImgError(this, ${t.id})"> <div class="card-body"> <h4>${t.name}</h4> <p style="font-size:12px">📍 ${t.city}, ${t.state}</p> <p style="font-size:11.5px;color:#6b5344;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${shortSnippet}</p> <p style="font-size:11px;margin-top:6px">⏰ <strong>Timings:</strong> ${t.timing}</p> <p style="font-size:11px;margin-bottom:10px">🚂 ${t.rail}</p> <button class="btn" onclick="openTemple(${t.id})">History, Tradition & Route</button> </div> </div>;
+});
+document.getElementById('grid').innerHTML = html || 'No temples found.';
+document.getElementById('count').innerText = 'Found ' + filtered.length + ' Temples - ' + currentState;
+document.getElementById('shown').innerText = show.length;
+document.getElementById('total').innerText = filtered.length;
+document.getElementById('pagination').style.display = show.length >= filtered.length ? 'none' : 'block';
+show.forEach(t => {
+if (!imgCache[t.id] && (!t.img || t.img.trim() === '' || t.img.includes('loremflickr') || t.img.includes('picsum'))) {
+fetchWikiData(t, document.getElementById('timg-' + t.id), null);
+}
+});
+}
+function resetRender() { visibleCount = 24; render(); }
+function loadMore() { visibleCount += 24; render(); }
+function filterState(s, btn) {
+currentState = s;
+document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+if (btn) btn.classList.add('active');
+visibleCount = 24;
+render();
+}
+function openTemple(id) {
+let t = temples.find(x => x.id === id);
+if (!t) return;
+let imgSrc = imgCache[t.id] || (t.img && t.img.trim() !== '' ? t.img : FALLBACK_IMG);
+let historyText = t.history || descCache[t.id] || 'Loading temple history...';
+let traditionText = getTraditionText(t);
+document.getElementById('modalBox').innerHTML = `
+✕
+🛕 ${t.name}
+📜 History & Significance
+${historyText}
+🪔 Traditions & Rituals
+${traditionText}
+⏰ Darshan Timings & Travel Info
+
+Darshan Timings: ${t.timing}
+
+Location: ${t.city}, ${t.district || ''}, ${t.state}
+
+Nearest Railway: ${t.rail}
+
+Nearest Airport: ${t.airport}
+
+📍 Google Map Directions
+🏨 Booking.com Hotels
+📱 WhatsApp 8247679346
+`;
+document.getElementById('modal').style.display = 'block';
+if (!t.history || !imgCache[t.id]) {
+fetchWikiData(t, document.getElementById('modal-timg-' + t.id), document.getElementById('modal-history-' + t.id));
+}
+}
+window.onclick = function(e) { if (e.target === document.getElementById('modal')) document.getElementById('modal').style.display = 'none'; };
+document.addEventListener('DOMContentLoaded', function() { initStateButtons(); render(); });
 </script>
-<p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
 </body>
-</html>                 
+</html>
