@@ -337,6 +337,42 @@ const temples = [{id:1,name:"Yadagirigutta Lakshmi Narasimha Swamy",city:"Yadagi
 {id:240,name:"Tungnath Temple",city:"Tungnath",district:"Rudraprayag",state:"Uttarakhand",lat:30.19,lon:78.62,timing:"4 AM - 9 PM",rail:"Tungnath Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600"},
 {id:241,name:"Hemkund Sahib",city:"Hemkund",district:"Chamoli",state:"Uttarakhand",lat:30.32,lon:78.69,timing:"4 AM - 9 PM",rail:"Hemkund Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600"}
 ];
+<script>
+// Dynamic SEO for each temple - TempleYatra
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const templeId = params.get('temple');
+  if (templeId) {
+    // Find temple from your existing data
+    // Change 'temples' to your actual variable name if different
+    const temple = (window.temples || window.allTemples || []) .find(t => String(t.id) === String(templeId) || String(t.temple_id) === String(templeId));
+    if (temple) {
+      const name = temple.name || temple.temple_name || 'Temple';
+      const place = temple.location || temple.place || temple.district || 'Telangana';
+      const title = `${name} - ${place} | TempleYatra.in - 241 Telangana Temples`;
+      document.title = title;
+      
+      // Update meta description for Google
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.name = 'description';
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.content = `Visit ${name} in ${place}. Timings, Route, History, Pooja Details. Part of TempleYatra - 241 Temples of Telangana.`;
+      
+      // Add canonical for Google
+      let canonical = document.querySelector('link[rel="canonical"]');
+      if (!canonical) {
+        canonical = document.createElement('link');
+        canonical.rel = 'canonical';
+        document.head.appendChild(canonical);
+      }
+      canonical.href = `https://templeyatra.vercel.app/?temple=${templeId}`;
+    }
+  }
+})();
+</script>
 let currentState='All';
 let visibleCount=24;
 function getFiltered(){let q=document.getElementById('searchBox').value.toLowerCase();return temples.filter(t=> (currentState==='All'||t.state===currentState) && (t.name.toLowerCase().includes(q)||t.city.toLowerCase().includes(q)||t.state.toLowerCase().includes(q)));}
