@@ -366,5 +366,55 @@ document.addEventListener('DOMContentLoaded',render);
 setTimeout(render,400);
 </script>
 <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+<script>
+  window.addEventListener("load", () => {
+    const FALLBACK_IMG = "https://wikimedia.org";
+    const imageCache = {};
+
+    async function updateCardImage(img, templeName) {
+      if (imageCache[templeName]) {
+        img.src = imageCache[templeName];
+        return;
+      }
+      try {
+        const query = encodeURIComponent(templeName + " Temple");
+        const url = https://wikipedia.org{query}&gsrlimit=1&prop=pageimages&pithumbsize=500&format=json&origin=*;
+        const res = await fetch(url);
+        const data = await res.json();
+        const pages = data.query?.pages;
+        
+        if (pages) {
+          const firstPage = Object.values(pages)[0];
+          if (firstPage?.thumbnail?.source) {
+            imageCache[templeName] = firstPage.thumbnail.source;
+            img.src = firstPage.thumbnail.source;
+            return;
+          }
+        }
+        img.src = FALLBACK_IMG;
+      } catch (e) {
+        img.src = FALLBACK_IMG;
+      }
+    }
+
+    function fixAllTempleImages() {
+      document.querySelectorAll("img").forEach((img) => {
+        if (img.dataset.wikiChecked) return;
+        const card = img.closest("div");
+        const heading = card?.querySelector("h2, h3, h4, strong, .title");
+        const templeName = heading?.textContent?.trim();
+
+        if (templeName && templeName.length > 3) {
+          img.dataset.wikiChecked = "true";
+          updateCardImage(img, templeName);
+        }
+      });
+    }
+
+    fixAllTempleImages();
+    const observer = new MutationObserver(fixAllTempleImages);
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
 </body>
 </html>                 
