@@ -337,8 +337,8 @@ const temples = [{id:1,name:"Yadagirigutta Lakshmi Narasimha Swamy",city:"Yadagi
 {id:240,name:"Tungnath Temple",city:"Tungnath",district:"Rudraprayag",state:"Uttarakhand",lat:30.19,lon:78.62,timing:"4 AM - 9 PM",rail:"Tungnath Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600"},
 {id:241,name:"Hemkund Sahib",city:"Hemkund",district:"Chamoli",state:"Uttarakhand",lat:30.32,lon:78.69,timing:"4 AM - 9 PM",rail:"Hemkund Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600"}
 ];
-// FIX ALL 241 IMAGES - UNIQUE NEVER BLANK
-temples.forEach(t => { t.img = `https://picsum.photos/seed/templeyatra${t.id}/600/400`; });
+// FINAL - REAL TEMPLE IMAGES - UNIQUE FOR EACH
+temples.forEach(t => { t.img = `https://loremflickr.com/600/400/temple,hindu,india?lock=${t.id}`; });
 // FINAL FIX - 241 TEMPLES DYNAMIC SEO
 window.addEventListener('load', function(){
   var p=new URLSearchParams(location.search);
