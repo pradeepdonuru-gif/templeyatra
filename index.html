@@ -337,33 +337,94 @@ const temples = [{id:1,name:"Yadagirigutta Lakshmi Narasimha Swamy",city:"Yadagi
 {id:240,name:"Tungnath Temple",city:"Tungnath",district:"Rudraprayag",state:"Uttarakhand",lat:30.19,lon:78.62,timing:"4 AM - 9 PM",rail:"Tungnath Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=600"},
 {id:241,name:"Hemkund Sahib",city:"Hemkund",district:"Chamoli",state:"Uttarakhand",lat:30.32,lon:78.69,timing:"4 AM - 9 PM",rail:"Hemkund Railway - 2km",airport:"Nearest Airport - 30km",famous:"Darshan",img:"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600"}
 ];
-// FINAL - REAL TEMPLE IMAGES - UNIQUE FOR EACH
-temples.forEach(t => { t.img = `https://loremflickr.com/600/400/temple,hindu,india?lock=${t.id}`; });
+<script>
+// Keep original t.img URLs if they exist; only set a clean placeholder if missing
+const FALLBACK_IMG = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://w3.org' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect fill='%23f3e5d8' width='600' height='400'/%3E%3Ctext fill='%23b85d19' font-family='sans-serif' font-size='24' font-weight='bold' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3E%F0%9F%9B%95 Temple Image Unavailable%3C/text%3E%3C/svg%3E";
+
 // FINAL FIX - 241 TEMPLES DYNAMIC SEO
 window.addEventListener('load', function(){
-  var p=new URLSearchParams(location.search);
-  var tid=p.get('temple')||p.get('Temple');
+  var p = new URLSearchParams(location.search);
+  var tid = p.get('temple') || p.get('Temple');
   if(!tid) return;
-  var list=(typeof temples!=='undefined'?temples:[]);
-  if(list.length==0) return;
-  var t=null;
-  for(var i=0;i<list.length;i++){if(String(list[i].id)==String(tid)){t=list[i];break;}}
+  var list = (typeof temples !== 'undefined' ? temples : []);
+  if(list.length == 0) return;
+  var t = null;
+  for(var i = 0; i < list.length; i++){
+    if(String(list[i].id) == String(tid)){ t = list[i]; break; }
+  }
   if(!t) return;
-  document.title=t.name+' Temple, '+(t.state||t.location||'India')+' - Timings & History | TempleYatra';
-  var m=document.querySelector('meta[name="description"]');
-  if(m) m.content=t.name+' Temple in '+(t.location||'')+'. Check timings, history, route.';
+  document.title = t.name + ' Temple, ' + (t.state || t.location || 'India') + ' - Timings & History | TempleYatra';
+  var m = document.querySelector('meta[name="description"]');
+  if(m) m.content = t.name + ' Temple in ' + (t.location || '') + '. Check timings, history, route.';
 });
-let currentState='All';
-let visibleCount=24;
-function getFiltered(){let q=document.getElementById('searchBox').value.toLowerCase();return temples.filter(t=> (currentState==='All'||t.state===currentState) && (t.name.toLowerCase().includes(q)||t.city.toLowerCase().includes(q)||t.state.toLowerCase().includes(q)));}
-function render(){let filtered=getFiltered();let show=filtered.slice(0,visibleCount);let html='';show.forEach(t=>{html+=`<div class="card"><img src="${t.img}" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/temple${t.id}/600/400'" style="width:100%;height:180px;object-fit:cover"><div><h4 style="margin:4px 0">${t.name}</h4><p style="font-size:12px">${t.city}, ${t.state}</p><p style="font-size:11px">${t.timing} | 🚂 ${t.rail}</p><button class="btn" onClick="openTemple(${t.id})">Route & Hotels</button></div></div>`;});document.getElementById('grid').innerHTML=html||'<p>No temples found</p>';document.getElementById('count').innerText='Found '+filtered.length+' Temples - '+currentState+' | Showing '+show.length;document.getElementById('shown').innerText=show.length;document.getElementById('total').innerText=filtered.length;document.getElementById('pagination').style.display=show.length>=filtered.length?'none':'block';}
-function resetRender(){visibleCount=24;render();}
-function loadMore(){visibleCount+=24;render();}
-function filterState(s,btn){currentState=s;document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');visibleCount=24;render();}
-function openTemple(id){let t=temples.find(x=>x.id===id);document.getElementById('modalBox').innerHTML=`<button onclick="document.getElementById('modal').style.display='none'" style="position:absolute;right:12px;top:12px;padding:7px 12px;border:none;background:#ff6b00;color:white;border-radius:20px;cursor:pointer">✕</button><h3>🛕 ${t.name}</h3><img src="${t.img}" loading="lazy" onerror="this.onerror=null;this.src='https://picsum.photos/seed/temple${t.id}/600/400'" style="width:100%;border-radius:12px;max-height:300px;object-fit:cover"><p>📍 ${t.city}, ${t.district}, ${t.state}<br>⏰ ${t.timing}<br>🚆 ${t.rail}<br>✈️ ${t.airport}</p><a class="btn2" href="https://www.google.com/maps/dir/?api=1&destination=${t.lat},${t.lon}" target="_blank">📍 Google Map Directions</a><br><br><a class="btn" href="https://www.booking.com/searchresults.html?ss=${t.city}&aid=4749214" target="_blank" style="background:#003580">🏨 Booking.com Hotels</a><br><br><a href="https://wa.me/918247679346?text=Hi%20Pradeep%20Need%20Cab%20Hotel%20near%20${t.name}" target="_blank" style="background:#25D366;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;display:inline-block">📱 WhatsApp 8247679346</a>`;document.getElementById('modal').style.display='block';}
-window.onclick=function(e){if(e.target==document.getElementById('modal')){document.getElementById('modal').style.display='none';}}
-document.addEventListener('DOMContentLoaded',render);
-setTimeout(render,400);
+
+let currentState = 'All';
+let visibleCount = 24;
+
+function getFiltered(){
+  let q = document.getElementById('searchBox').value.toLowerCase();
+  return temples.filter(t => 
+    (currentState === 'All' || t.state === currentState) && 
+    (t.name.toLowerCase().includes(q) || t.city.toLowerCase().includes(q) || t.state.toLowerCase().includes(q))
+  );
+}
+
+function render(){
+  let filtered = getFiltered();
+  let show = filtered.slice(0, visibleCount);
+  let html = '';
+  show.forEach(t => {
+    let imgSrc = (t.img && t.img.trim() !== '') ? t.img : FALLBACK_IMG;
+    html += `<div class="card">
+      <img src="${imgSrc}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${FALLBACK_IMG}'" style="width:100%;height:180px;object-fit:cover">
+      <div>
+        <h4 style="margin:4px 0">${t.name}</h4>
+        <p style="font-size:12px">${t.city}, ${t.state}</p>
+        <p style="font-size:11px">${t.timing} | 🚂 ${t.rail}</p>
+        <button class="btn" onclick="openTemple(${t.id})">Route & Hotels</button>
+      </div>
+    </div>`;
+  });
+  document.getElementById('grid').innerHTML = html || '<p>No temples found</p>';
+  document.getElementById('count').innerText = 'Found ' + filtered.length + ' Temples - ' + currentState + ' | Showing ' + show.length;
+  document.getElementById('shown').innerText = show.length;
+  document.getElementById('total').innerText = filtered.length;
+  document.getElementById('pagination').style.display = show.length >= filtered.length ? 'none' : 'block';
+}
+
+function resetRender(){ visibleCount = 24; render(); }
+function loadMore(){ visibleCount += 24; render(); }
+
+function filterState(s, btn){
+  currentState = s;
+  document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  visibleCount = 24;
+  render();
+}
+
+function openTemple(id){
+  let t = temples.find(x => x.id === id);
+  let imgSrc = (t.img && t.img.trim() !== '') ? t.img : FALLBACK_IMG;
+  document.getElementById('modalBox').innerHTML = `
+    <button onclick="document.getElementById('modal').style.display='none'" style="position:absolute;right:12px;top:12px;padding:7px 12px;border:none;background:#ff6b00;color:white;border-radius:20px;cursor:pointer">✕</button>
+    <h3>🛕 ${t.name}</h3>
+    <img src="${imgSrc}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${FALLBACK_IMG}'" style="width:100%;border-radius:12px;max-height:300px;object-fit:cover">
+    <p>📍 ${t.city}, ${t.district}, ${t.state}<br>⏰ ${t.timing}<br>🚆 ${t.rail}<br>✈️ ${t.airport}</p>
+    <a class="btn2" href="https://www.google.com/maps/dir/?api=1&destination=${t.lat},${t.lon}" target="_blank">📍 Google Map Directions</a><br><br>
+    <a class="btn" href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(t.city)}&aid=4749214" target="_blank" style="background:#003580">🏨 Booking.com Hotels</a><br><br>
+    <a href="https://wa.me/918247679346?text=Hi%20Pradeep%20Need%20Cab%20Hotel%20near%20${encodeURIComponent(t.name)}" target="_blank" style="background:#25D366;color:white;padding:10px 18px;border-radius:20px;text-decoration:none;display:inline-block">📱 WhatsApp 8247679346</a>`;
+  document.getElementById('modal').style.display = 'block';
+}
+
+window.onclick = function(e){
+  if(e.target == document.getElementById('modal')){
+    document.getElementById('modal').style.display = 'none';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', render);
+setTimeout(render, 400);
 </script>
 <p><a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
 </body>
